@@ -1,0 +1,470 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<style>
+    .hide {
+        display: none;
+    }
+    
+    body {
+        margin: 0;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    .container1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .task-form {
+        background-color: #FFFFFF;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        float: right;
+        width: 400px;
+        margin: 0 20px;
+    }
+    
+    h2 {
+        text-align: center;
+        color: #8B008B;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        color: #8B008B;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #8B008B;
+        box-sizing: border-box;
+    }
+    
+    select {
+        appearance: none;
+    }
+    
+    .btn-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+    /* .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        background-color: #8B008B;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    } */
+    
+    .btn-edit {
+        background: #ff6bf5;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        font-family: Mija, -apple-system, BlinkMacSystemFont, Roboto, "Roboto Slab", "Droid Serif", "Segoe UI", system-ui, Arial, sans-serif;
+        font-size: 1em;
+        font-weight: 700;
+        justify-content: center;
+        line-height: 1.2em;
+        padding: 0.6em 0.8em;
+        text-align: center;
+        text-decoration: none;
+        text-decoration-skip-ink: auto;
+        text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+        text-underline-offset: 1px;
+        transition: all .2s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        width: 100%;
+        word-break: break-word;
+        border: 0;
+    }
+    
+    .btn:hover {
+        background-color: #B20000;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+    }
+    
+    th,
+    td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #8B008B;
+        font-size: 16px;
+    }
+    
+    th {
+        background-color: #8B008B;
+        color: #FFFFFF;
+        font-weight: bold;
+    }
+    /* ... (previous styles) */
+    
+    .delete-container {
+        text-align: center;
+    }
+    
+    .delete-btn {
+        padding: 8px 16px;
+        background-color: #B20000;
+        color: #FFFFFF;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .delete-btn:hover {
+        background-color: #8B008B;
+    }
+</style>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="logo-apple"></ion-icon>
+                        </span>
+                        <span class="title">Brand Name</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://127.0.0.1:5500/asm/Responsive%20Admin%20Dashboard%20-%20final/newproduct.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search" onkeyup="search()">
+                        <!-- <ion-icon name="search-outline" onclick="search()"></ion-icon> -->
+                    </label>
+                </div>
+
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">1,504</div>
+                        <div class="cardName">Daily Views</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cart-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">284</div>
+                        <div class="cardName">Comments</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="chatbubbles-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Earning</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="cash-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================ Order Details List ================= -->
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Danh sách sản phẩm </h2>
+                        <a href="#" class="btn">thêm sản phẩm </a>
+
+
+                    </div>
+
+                    <table class="new-arrivals-content">
+                        <thead>
+                            <tr id="cao" class="col-md-3 col-sm-4" data-id="1">
+                                <th>Tên sản phẩm</th>
+                                <th>Giá sản phẩm</th>
+                                <th>Lượt xem</th>
+                                <th>Hình ảnh</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="col-md-3 col-sm-4" data-id="1" class="row">
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- ================= New Customers ================ -->
+                <div class="container1">
+                    <form id="taskForm">
+                        <div class="form-group">
+                            <label for="taskAssignee">Tên sản phẩm</label>
+                            <input type="text" id="taskAssignee" name="taskAssignee" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="taskName">Giá sản phẩm</label>
+                            <input type="number" id="taskName" name="taskName" value="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskImage">Hình ảnh sản phẩm</label>
+                            <input type="file" id="taskImage" name="taskImage" accept="image/*" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="taskViewed">Lượt xem</label>
+                            <input type="text" id="taskViewed" name="taskViewed" value="" required>
+                        </div>
+
+                        <div class="btn-container">
+                            <!-- Gọi hàm toggleForm để chuyển đổi sang chế độ thêm -->
+                            <a href="#"><button class="btn" id="addButton">Thêm sản phẩm</button></a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="container2">
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="editTaskAssignee">Tên sản phẩm</label>
+                            <input type="text" id="editTaskAssignee" name="editTaskAssignee" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editTaskName">Giá sản phẩm</label>
+                            <input type="number" id="editTaskName" name="editTaskName" value="" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editTaskImage">Hình ảnh sản phẩm</label>
+                            <input type="file" id="editTaskImage" name="editTaskImage" accept="image/*" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="editTaskViewed">Lượt xem</label>
+                            <input type="text" id="editTaskViewed" name="editTaskViewed" value="" required>
+                        </div>
+
+                        <div class="btn-container">
+                            <button class="btn-edit btn btn-primary btn-sm" id="editSubmitButton" type="submit">Lưu</button>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <ul>
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="logo-apple"></ion-icon>
+                    </span>
+                <span class="title">Brand Name</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="index.html">
+                <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                <span class="title">Dashboard</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="http://127.0.0.1:5500/asm/Responsive%20Admin%20Dashboard%20-%20final/newproduct.html">
+                <span class="icon">
+                        <ion-icon name="people-outline"></ion-icon>
+                    </span>
+                <span class="title">Customers</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                <span class="title">Messages</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="help-outline"></ion-icon>
+                    </span>
+                <span class="title">Help</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                <span class="title">Settings</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                    </span>
+                <span class="title">Password</span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#">
+                <span class="icon">
+                        <ion-icon name="log-out-outline"></ion-icon>
+                    </span>
+                <span class="title">Sign Out</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- =========== Scripts =========  -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

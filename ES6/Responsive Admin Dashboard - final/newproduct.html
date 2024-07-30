@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Task Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .container1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .task-form {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            float: right;
+            width: 400px;
+            margin: 0 20px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #8B008B;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            color: #8B008B;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #8B008B;
+            box-sizing: border-box;
+        }
+        
+        select {
+            appearance: none;
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #8B008B;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #B20000;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+        
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #8B008B;
+            font-size: 16px;
+        }
+        
+        th {
+            background-color: #8B008B;
+            color: #FFFFFF;
+            font-weight: bold;
+        }
+        /* ... (previous styles) */
+        
+        .delete-container {
+            text-align: center;
+        }
+        
+        .delete-btn {
+            padding: 8px 16px;
+            background-color: #B20000;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .delete-btn:hover {
+            background-color: #8B008B;
+        }
+        /* ... (remaining styles) */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="logo-apple"></ion-icon>
+                        </span>
+                        <span class="title">Brand Name</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="http://127.0.0.1:5500/asm/Responsive%20Admin%20Dashboard%20-%20final/newproduct.html">
+                        <span class="icon">
+                            <ion-icon name="people-outline"></ion-icon>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="chatbubble-outline"></ion-icon>
+                        </span>
+                        <span class="title">Messages</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="help-outline"></ion-icon>
+                        </span>
+                        <span class="title">Help</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <span class="title">Password</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="log-out-outline"></ion-icon>
+                        </span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="task-form">
+
+            <h2>Task Form</h2>
+
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskAssignee">Tên sản phẩm</label>
+                    <input type="text" id="taskAssignee" name="taskAssignee" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskName">Giá sản phẩm</label>
+                    <input type="number" id="taskName" name="taskName" required>
+                </div>
+                <div class="form-group">
+                    <label for="taskStatus">Trạng thái</label>
+                    <select id="taskStatus" name="taskStatus" required>
+                        <option value="còn hàng">Còn hàng</option>
+                        <option value="hết hàng ">Hết hàng</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskOwner">Thêm ảnh</label>
+                    <input type="file" id="taskOwner" name="taskOwner" accept="image/*" onchange="previewImage()" required>
+                    <img id="imagePreview" alt="Preview" style="max-width: 100%; margin-top: 10px;">
+                </div>
+
+                <div class="btn-container">
+                    <a>
+                        <button class="btn-edit btn btn-primary btn-sm" id="addButton" type="submit">Thêm</button>
+
+                    </a>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const apiUrl = 'http://127.0.0.1:3000/products/api/products';
+        const taskForm = document.getElementById('taskForm');
+        const taskName = document.getElementById('taskName').value;
+
+        taskForm.addEventListener('submit', async(e) => {
+            e.preventDefault();
+
+            const taskAssignee = document.getElementById('taskAssignee').value;
+            const taskName = document.getElementById('taskName').value;
+            const taskStatus = document.getElementById('taskStatus').value;
+            const taskOwner = document.getElementById('taskOwner').value;
+
+            const newProduct = {
+                name: taskAssignee,
+                new_price: taskName,
+                status: taskStatus,
+                image: taskOwner
+            };
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newProduct)
+                });
+
+                if (response.ok) {
+                    const product = await response.json();
+                    const {
+                        id,
+                        name,
+                        new_price,
+                        status,
+                        image
+                    } = product.data;
+
+                    const newRow = document.createElement('tr');
+                    newRow.setAttribute('data-id', id);
+                    newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${new_price}</td>
+                <td>${status}</td>
+                <img src="../${image}" alt="new-arrivals images">
+                <td><span class="status delivered">Delivered</span></td>
+                <td><a class="btn-del btn btn-danger btn-sm">del</a></td>
+            `;
+
+                    const rowsp = document.getElementById('rowsp');
+                    rowsp.appendChild(newRow);
+                    document.getElementById('taskAssignee').value = '';
+                    document.getElementById('taskName').value = '';
+                    document.getElementById('taskStatus').value = 'completed';
+                    document.getElementById('taskOwner').value = '';
+                } else {
+                    console.error('Lỗi khi thêm sản phẩm:', response.status);
+                }
+            } catch (error) {
+                console.error('Lỗi khi thêm sản phẩm:', error);
+            }
+        });
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/admin.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

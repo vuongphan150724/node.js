@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Categories</title>
+</head>
+
+<body>
+    <div class="dropdown">
+        <span>Danh mục</span>
+        <div class="dropdown-content" id="categoryDropdown">
+            <!-- Categories will be inserted here dynamically -->
+
+        </div>
+    </div>
+
+    <script>
+        // Gửi yêu cầu đến API để lấy danh sách danh mục
+        fetch('http://127.0.0.1:3000/catagories/api/categories')
+            .then(response => response.json()) // Chuyển đổi phản hồi thành JSON
+            .then(data => {
+                const categoryDropdown = document.getElementById('categoryDropdown');
+
+                // Xóa nội dung cũ của dropdown
+                categoryDropdown.innerHTML = '';
+
+                // Thêm các mục danh mục từ dữ liệu vào dropdown
+                data.data.forEach(category => {
+                    const categoryLink = document.createElement('a');
+                    categoryLink.textContent = category.name; // Lấy tên danh mục từ dữ liệu
+                    categoryDropdown.appendChild(categoryLink);
+                });
+            })
+            .catch(error => console.error('Lỗi:', error)); // Bắt lỗi nếu có
+    </script>
+
+</body>
+
+</html>

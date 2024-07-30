@@ -1,0 +1,65 @@
+{
+    "products": [{
+            "id": "3",
+            "name": "ghế dựa",
+            "price": 30,
+            "img": "assets/images/collection/arrivals3.png",
+            "status": "Còn hàng"
+        },
+        {
+            "id": "4",
+            "name": "ghế thời đại   ",
+            "price": 40,
+            "img": "assets/images/collection/arrivals4.png",
+            "status": "Còn hàng"
+        },
+        {
+            "id": "5",
+            "name": "ghế kiểu MĨ",
+            "price": 40,
+            "img": "assets/images/collection/arrivals5.png",
+            "status": "Còn hàng"
+        },
+        {
+            "id": "6",
+            "name": "bộ bàn ghế gia đình",
+            "price": 40,
+            "img": "assets/images/collection/arrivals6.png",
+            "status": "Còn hàng"
+        },
+        {
+            "id": "7",
+            "name": "ghế đôi",
+            "price": 40,
+            "img": "assets/images/collection/arrivals7.png",
+            "status": "Còn hàng"
+        },
+        {
+            "id": "8",
+            "name": "giường gia đình",
+            "price": 40,
+            "img": "assets/images/collection/arrivals8.png",
+            "status": "Còn hàng"
+        },
+        {
+            "name": "ghe da",
+            "price": "34",
+            "status": "còn hàng",
+            "id": "7c24"
+        },
+        {
+            "id": "4760",
+            "name": "1234",
+            "price": "214",
+            "status": "còn hàng",
+            "img": "C:\\fakepath\\qrCode.jpeg"
+        },
+        {
+            "id": "2310",
+            "name": "ghe da",
+            "price": "123",
+            "status": "còn hàng",
+            "img": "C:\\fakepath\\2.3.jpg"
+        }
+    ]
+}
